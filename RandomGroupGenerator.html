@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #97a7d4;
+          }
+          h2 {
+            margin: 5px 0;
+          }
+          #wrapper {
+            width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+          }
+          table, td {
+            border: 2px solid black;
+            }
+          
+        </style>
+</head>
+   
+<body>
+
+
+    <label for="numG">How many groups do you want to generate？</label><br>
+    <input type="text" id="numG" name="numG" ><br>
+    <button onclick ="confirmFuc();" type="button" class = "button" id="confirm">Confirm</button>
+    <button onclick ="resetFuc();" type="button" class = "button" id="reset">Reset</button>
+
+
+    <table>
+        <!-- here goes our data! -->
+    </table>
+   
+
+<script>
+
+
+
+var class_name =
+"Apple Zeng\n"+
+"Mango Wu\n"+
+"Pear Zhang\n"+
+"Avacado Gao\n"+
+"Potato Han\n"+
+"Banana Chen\n"+
+"Tomato Li\n"
+
+
+
+ 
+var class_array =[]; 
+var lines = class_name.split('\n');
+       
+       for(var i= 0; i < lines.length-1; i++){
+        var curr_line = lines[i];
+        var person = {sName: curr_line,sNumber: i,sGroup:0}
+          
+        class_array.push(person)
+        console.log("xue"+person.sName)
+
+        }
+  console.log(class_array)
+
+
+
+
+
+function confirmFuc(){
+    var groupN = document.getElementById("numG").value;
+
+
+    var groupnumber = parseInt(groupN)
+
+    shuffle(class_array)
+
+    //console.log(class_array)
+    for(var i= 0; i < class_array.length; i++){
+        var x = i%groupnumber
+
+        var curr = class_array[i]
+        console.log("group"+x)
+       
+        curr.sGroup =x;
+
+
+    }
+     //console.log(class_array)
+
+     generator()
+   
+
+
+    }
+
+    function generator() {
+    var xtable = document.createElement("TABLE");
+    xtable.setAttribute("id", "myTable");
+    document.body.appendChild(xtable);
+    for(var i= 0; i < class_array.length; i++){
+        var rownum = class_array[i].sGroup
+        var y = document.createElement("TD");
+        y.setAttribute("id", "myTD"+rownum);
+        document.getElementById("myTable").appendChild(y);
+        var z = document.createElement("TR");
+        var t = document.createTextNode(class_array[i].sGroup+1);
+        z.appendChild(t);
+        document.getElementById("myTD"+rownum).appendChild(z);
+       
+        var namestudent = document.createTextNode(class_array[i].sName);
+        z.appendChild(namestudent);
+        document.getElementById("myTD"+rownum).appendChild(z);
+
+
+
+    }
+
+
+  
+ 
+}
+
+
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+function  resetFuc(){
+    var Table = document.getElementById("myTable");
+    Table.innerHTML = "";
+
+
+}
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
