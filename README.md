@@ -1,5 +1,5 @@
 # RandomGroupGenerator
-##A javaScript random group generator
+
 
 As a TA, I knew some of my students might not want to answer questions or even ask questions because they have no clue about what I am talking about.
 Sometimes, discussion with several random group members before revealing the answer together as a whole group is beneficial.
