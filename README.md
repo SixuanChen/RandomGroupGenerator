@@ -1,4 +1,4 @@
-# RandomGroupGenerator
+# Random Group Generator
 
 
 As a TA, I knew some of my students might not want to answer questions or even ask questions because they have no clue about what I am talking about.
