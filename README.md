@@ -1,5 +1,6 @@
 # RandomGroupGenerator
-A javaScript random group generator
+##A javaScript random group generator
+
 As a TA, I knew some of my students might not want to answer questions or even ask questions because they have no clue about what I am talking about.
 Sometimes, discussion with several random group members before revealing the answer together as a whole group is beneficial.
 Therefore, I coded up a random group generator to help them. You might say, zoom has this function already. 
